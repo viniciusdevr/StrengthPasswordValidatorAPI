@@ -1,7 +1,16 @@
+using StrengthPasswordValidatorAPI.Models.Contracts;
+using StrengthPasswordValidatorAPI.Services.ValidatePassword;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddSingleton<IPasswordRuleStrategy, MinimumLengthStrategy>();
+builder.Services.AddSingleton<IPasswordRuleStrategy, NoRepeatedCharacterStrategy>();
+builder.Services.AddSingleton<IPasswordRuleStrategy, RequiredLowerCaseStrategy>();
+builder.Services.AddSingleton<IPasswordRuleStrategy, RequiredUpperCaseStrategy>();
+builder.Services.AddSingleton<IPasswordRuleStrategy, RequiredSpecialCharacterStrategy>();
 
 var app = builder.Build();
 
