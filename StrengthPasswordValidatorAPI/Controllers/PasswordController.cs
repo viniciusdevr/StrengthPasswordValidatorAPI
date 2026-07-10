@@ -8,16 +8,16 @@ namespace StrengthPasswordValidatorAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class PasswordController(IValidatePasswordService validatePasswordService) : Controller
+    public class PasswordController(IValidatePasswordService validatePasswordService) : ControllerBase
     {
-        [HttpGet("validate")]
-        public IActionResult GetPasswordValidation(Password password)
+        [HttpPost("validate")]
+        public IActionResult GetPasswordValidation([FromBody] Password password)
         {
             try
             {
                 var notifications = validatePasswordService.Validate(password.GivenPassword);
 
-                if (notifications is not null)
+                if (notifications.Count > 0)
                 {
                     return BadRequest(notifications);
                 }
