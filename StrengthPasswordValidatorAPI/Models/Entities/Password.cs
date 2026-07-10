@@ -1,12 +1,12 @@
-﻿namespace StrengthPasswordValidatorAPI.Models
+﻿namespace StrengthPasswordValidatorAPI.Models.Entities
 {
     public class Password
     {
         public string GivenPassword { get; private set; }
 
-        public Password(string password)
+        public Password(string givenPassword)
         {
-            this.GivenPassword = password;
+            GivenPassword = givenPassword;
         }
     }
 }
