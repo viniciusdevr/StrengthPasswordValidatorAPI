@@ -23,7 +23,8 @@ namespace StrengthPasswordValidatorAPI.Services
                 new RequiredNumberStrategy(),
                 new RequiredUpperCaseStrategy(),
                 new RequiredLowerCaseStrategy(),
-                new RequiredSpecialCharacterStrategy()
+                new RequiredSpecialCharacterStrategy(),
+                new NoRepeatedCharacterStrategy()
             };
 
             foreach (var strategy in strategies)
