@@ -7,7 +7,7 @@ namespace StrengthPasswordValidatorAPI.Services.ValidatePassword
     {
         public PasswordNotification Validate(string password)
         {
-            if (!password.Any(password => !char.IsLetterOrDigit(password)))
+            if (!password.Any(ch => !char.IsLetterOrDigit(ch)))
             {
                 return new PasswordNotification(false, "Password must contain at least one special character.");
             }
