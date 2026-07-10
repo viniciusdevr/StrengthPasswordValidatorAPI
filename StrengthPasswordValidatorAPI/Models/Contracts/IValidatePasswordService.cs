@@ -1,6 +1,9 @@
-﻿namespace StrengthPasswordValidatorAPI.Models.Contracts
+﻿using StrengthPasswordValidatorAPI.Models.Entities;
+
+namespace StrengthPasswordValidatorAPI.Models.Contracts
 {
-    public class IValidateService
+    public interface IValidatePasswordService
     {
+        List<PasswordNotification> Validate(string password);
     }
 }
