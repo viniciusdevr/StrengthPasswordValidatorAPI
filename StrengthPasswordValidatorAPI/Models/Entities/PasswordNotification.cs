@@ -1,7 +1,10 @@
-﻿namespace StrengthPasswordValidatorAPI.Models.Entities
+﻿using StrengthPasswordValidatorAPI.Models.Enums;
+
+namespace StrengthPasswordValidatorAPI.Models.Entities
 {
     public class PasswordNotification
     {
+        public StatusRuleError Error { get; set; } = StatusRuleError.None;
         public bool IsValid { get; set; }
         public string Message { get; set; } = string.Empty;
 
@@ -10,8 +13,9 @@
             IsValid = isValid;
         }
 
-        public PasswordNotification(bool isValid, string message)
+        public PasswordNotification(StatusRuleError error,bool isValid, string message)
         {
+            Error = error;
             IsValid = isValid;
             Message = message;
         }
