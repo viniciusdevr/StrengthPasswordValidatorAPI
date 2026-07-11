@@ -29,7 +29,7 @@ namespace StrengthPasswordValidatorAPI.Services
 
             foreach (var strategy in strategies)
             {
-                 notification = strategy.Validate(password);
+                notification = strategy.Validate(password);
                 if (!notification.IsValid)
                 {
                     result.Add(notification);
