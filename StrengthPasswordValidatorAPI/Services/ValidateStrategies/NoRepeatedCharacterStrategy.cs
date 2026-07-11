@@ -7,9 +7,9 @@ namespace StrengthPasswordValidatorAPI.Services.ValidatePassword
     {
         public PasswordNotification Validate(string password)
         {
-            for (int i  = 0; i < password.Length; i++)
+            for (int i = 0; i < password.Length - 1; i++)
             {
-                if (password[i] == password[i+1])
+                if (password[i] == password[i + 1])
                 {
                     return new PasswordNotification(false, "Password must not contain repeated characters.");
                 }
