@@ -1,5 +1,6 @@
 ﻿using StrengthPasswordValidatorAPI.Models.Contracts;
 using StrengthPasswordValidatorAPI.Models.Entities;
+using StrengthPasswordValidatorAPI.Models.Enums;
 
 namespace StrengthPasswordValidatorAPI.Services.ValidatePassword
 {
@@ -9,7 +10,7 @@ namespace StrengthPasswordValidatorAPI.Services.ValidatePassword
         {
             if (!password.Any(ch => !char.IsLetterOrDigit(ch)))
             {
-                return new PasswordNotification(false, "Password must contain at least one special character.");
+                return new PasswordNotification(StatusRuleError.SpecialCharacterError, false, "Password must contain at least one special character.");
             }
             else
             {

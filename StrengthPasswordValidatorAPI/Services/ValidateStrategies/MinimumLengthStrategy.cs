@@ -1,5 +1,6 @@
 ﻿using StrengthPasswordValidatorAPI.Models.Contracts;
 using StrengthPasswordValidatorAPI.Models.Entities;
+using StrengthPasswordValidatorAPI.Models.Enums;
 
 namespace StrengthPasswordValidatorAPI.Services.ValidatePassword
 {
@@ -9,7 +10,7 @@ namespace StrengthPasswordValidatorAPI.Services.ValidatePassword
         {
             if (password.Length < 8)
             {
-                return new PasswordNotification(false, "Password must be at least 8 characters long.");
+                return new PasswordNotification(StatusRuleError.LengthError, false, "Password must be at least 8 characters long.");
             } else
             {
                 return new PasswordNotification(true);

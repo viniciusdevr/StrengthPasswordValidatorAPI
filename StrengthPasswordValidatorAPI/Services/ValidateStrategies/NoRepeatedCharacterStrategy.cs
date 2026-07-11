@@ -1,5 +1,6 @@
 ﻿using StrengthPasswordValidatorAPI.Models.Contracts;
 using StrengthPasswordValidatorAPI.Models.Entities;
+using StrengthPasswordValidatorAPI.Models.Enums;
 
 namespace StrengthPasswordValidatorAPI.Services.ValidatePassword
 {
@@ -11,7 +12,7 @@ namespace StrengthPasswordValidatorAPI.Services.ValidatePassword
             {
                 if (password[i] == password[i + 1])
                 {
-                    return new PasswordNotification(false, "Password must not contain repeated characters.");
+                    return new PasswordNotification(StatusRuleError.RepeatedCharacterError, false, "Password must not contain repeated characters.");
                 }
             }
             return new PasswordNotification(true);

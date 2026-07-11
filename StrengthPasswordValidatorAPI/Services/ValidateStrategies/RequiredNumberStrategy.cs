@@ -1,5 +1,6 @@
 ﻿using StrengthPasswordValidatorAPI.Models.Contracts;
 using StrengthPasswordValidatorAPI.Models.Entities;
+using StrengthPasswordValidatorAPI.Models.Enums;
 
 namespace StrengthPasswordValidatorAPI.Services.ValidatePassword
 {
@@ -9,7 +10,7 @@ namespace StrengthPasswordValidatorAPI.Services.ValidatePassword
         {
             if (!password.Any(char.IsDigit))
             {
-                return new PasswordNotification(false, "Password must contain at least one number.");
+                return new PasswordNotification(StatusRuleError.DigitError, false, "Password must contain at least one number.");
             }
             else
             {
