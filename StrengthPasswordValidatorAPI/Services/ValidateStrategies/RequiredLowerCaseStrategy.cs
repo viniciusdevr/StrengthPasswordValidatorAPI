@@ -1,5 +1,6 @@
 ﻿using StrengthPasswordValidatorAPI.Models.Contracts;
 using StrengthPasswordValidatorAPI.Models.Entities;
+using StrengthPasswordValidatorAPI.Models.Enums;
 
 namespace StrengthPasswordValidatorAPI.Services.ValidatePassword
 {
@@ -9,7 +10,7 @@ namespace StrengthPasswordValidatorAPI.Services.ValidatePassword
         {
             if (!password.Any(char.IsLower))
             {
-                return new PasswordNotification(false, "Password must contain at least one lowercase letter.");
+                return new PasswordNotification(StatusRuleError.LowercaseError, false, "Password must contain at least one lowercase letter.");
             }
             else
             {
