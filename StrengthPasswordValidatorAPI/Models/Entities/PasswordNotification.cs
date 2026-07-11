@@ -1,9 +1,11 @@
 ﻿using StrengthPasswordValidatorAPI.Models.Enums;
+using System.Text.Json.Serialization;
 
 namespace StrengthPasswordValidatorAPI.Models.Entities
 {
     public class PasswordNotification
     {
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public StatusRuleError Error { get; set; } = StatusRuleError.None;
         public bool IsValid { get; set; }
         public string Message { get; set; } = string.Empty;
@@ -19,5 +21,7 @@ namespace StrengthPasswordValidatorAPI.Models.Entities
             IsValid = isValid;
             Message = message;
         }
+
+        
     }
 }
