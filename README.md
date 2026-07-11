@@ -1,6 +1,6 @@
 # StrengthPasswordValidatorAPI
 
-API simples em ASP.NET Core (.NET 9) que valida a força de uma senha aplicando um conjunto de regras.
+API em ASP.NET Core (.NET 9) que valida a força de uma senha aplicando um conjunto de regras.
 
 ## Como rodar
 
