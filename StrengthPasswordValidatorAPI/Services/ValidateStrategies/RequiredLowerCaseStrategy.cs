@@ -10,11 +10,11 @@ namespace StrengthPasswordValidatorAPI.Services.ValidatePassword
         {
             if (!password.Any(char.IsLower))
             {
-                return new PasswordNotification(StatusRuleError.LowercaseError, false, "Password must contain at least one lowercase letter.");
+                return new PasswordNotification(StatusRuleError.LowercaseError, "Password must contain at least one lowercase letter.");
             }
             else
             {
-                return new PasswordNotification(true);
+                return new PasswordNotification(StatusRuleError.None);
             }
         }
     }

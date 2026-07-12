@@ -1,5 +1,6 @@
 ﻿using StrengthPasswordValidatorAPI.Models.Contracts;
 using StrengthPasswordValidatorAPI.Models.Entities;
+using StrengthPasswordValidatorAPI.Models.Enums;
 using StrengthPasswordValidatorAPI.Services.ValidatePassword;
 
 namespace StrengthPasswordValidatorAPI.Services
@@ -15,7 +16,7 @@ namespace StrengthPasswordValidatorAPI.Services
 
             List<PasswordNotification> result = new List<PasswordNotification>();
 
-            PasswordNotification notification = new PasswordNotification(true);
+            PasswordNotification notification = new PasswordNotification(StatusRuleError.None);
 
             List<IPasswordRuleStrategy> strategies = new List<IPasswordRuleStrategy>
             {
@@ -30,7 +31,7 @@ namespace StrengthPasswordValidatorAPI.Services
             foreach (var strategy in strategies)
             {
                 notification = strategy.Validate(password);
-                if (!notification.IsValid)
+                if (notification.Error != StatusRuleError.None)
                 {
                     result.Add(notification);
                 }

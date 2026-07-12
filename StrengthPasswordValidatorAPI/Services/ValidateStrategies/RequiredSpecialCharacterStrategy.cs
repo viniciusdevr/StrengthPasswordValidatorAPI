@@ -10,11 +10,11 @@ namespace StrengthPasswordValidatorAPI.Services.ValidatePassword
         {
             if (!password.Any(ch => !char.IsLetterOrDigit(ch)))
             {
-                return new PasswordNotification(StatusRuleError.SpecialCharacterError, false, "Password must contain at least one special character.");
+                return new PasswordNotification(StatusRuleError.SpecialCharacterError, "Password must contain at least one special character.");
             }
             else
             {
-                return new PasswordNotification(true);
+                return new PasswordNotification(StatusRuleError.None);
             }
         }
     }

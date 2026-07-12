@@ -10,11 +10,11 @@ namespace StrengthPasswordValidatorAPI.Services.ValidatePassword
         {
             if (!password.Any(char.IsDigit))
             {
-                return new PasswordNotification(StatusRuleError.DigitError, false, "Password must contain at least one number.");
+                return new PasswordNotification(StatusRuleError.DigitError, "Password must contain at least one number.");
             }
             else
             {
-                return new PasswordNotification(true);
+                return new PasswordNotification(StatusRuleError.None);
             }
         }
     }

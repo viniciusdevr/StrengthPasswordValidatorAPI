@@ -12,10 +12,10 @@ namespace StrengthPasswordValidatorAPI.Services.ValidatePassword
             {
                 if (password[i] == password[i + 1])
                 {
-                    return new PasswordNotification(StatusRuleError.RepeatedCharacterError, false, "Password must not contain repeated characters.");
+                    return new PasswordNotification(StatusRuleError.RepeatedCharacterError, "Password must not contain repeated characters.");
                 }
             }
-            return new PasswordNotification(true);
+            return new PasswordNotification(StatusRuleError.None);
         }
     }
 }

@@ -10,15 +10,14 @@ namespace StrengthPasswordValidatorAPI.Models.Entities
         public bool IsValid { get; set; }
         public string Message { get; set; } = string.Empty;
 
-        public PasswordNotification(bool isValid)
-        {
-            IsValid = isValid;
-        }
-
-        public PasswordNotification(StatusRuleError error,bool isValid, string message)
+        public PasswordNotification(StatusRuleError error)
         {
             Error = error;
-            IsValid = isValid;
+        }
+
+        public PasswordNotification(StatusRuleError error, string message)
+        {
+            Error = error;
             Message = message;
         }
 

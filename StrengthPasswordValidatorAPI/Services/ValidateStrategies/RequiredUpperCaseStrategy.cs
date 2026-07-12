@@ -10,11 +10,11 @@ namespace StrengthPasswordValidatorAPI.Services.ValidatePassword
         {
             if (!password.Any(char.IsUpper))
             {
-                return new PasswordNotification(StatusRuleError.UppercaseError, false, "Password must contain at least one uppercase letter.");
+                return new PasswordNotification(StatusRuleError.UppercaseError, "Password must contain at least one uppercase letter.");
             }
             else
             {
-                return new PasswordNotification(true);
+                return new PasswordNotification(StatusRuleError.None);
             }
         }
     }
