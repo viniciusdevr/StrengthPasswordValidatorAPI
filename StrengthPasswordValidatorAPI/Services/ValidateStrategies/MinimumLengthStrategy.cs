@@ -8,9 +8,9 @@ namespace StrengthPasswordValidatorAPI.Services.ValidatePassword
     {
         public PasswordNotification Validate(string password)
         {
-            if (password.Length < 8)
+            if (password.Length < 9)
             {
-                return new PasswordNotification(StatusRuleError.LengthError, "Password must be at least 8 characters long.");
+                return new PasswordNotification(StatusRuleError.LengthError, "Password must be at least 9 characters long.");
             } else
             {
                 return new PasswordNotification(StatusRuleError.None);

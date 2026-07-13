@@ -7,7 +7,6 @@ namespace StrengthPasswordValidatorAPI.Models.Entities
     {
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public StatusRuleError Error { get; set; } = StatusRuleError.None;
-        public bool IsValid { get; set; }
         public string Message { get; set; } = string.Empty;
 
         public PasswordNotification(StatusRuleError error)
